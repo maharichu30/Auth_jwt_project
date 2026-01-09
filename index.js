@@ -15,7 +15,7 @@ app.use(cors());
 connectDB();
 
 app.get("/", (req, res) => {
-  res.status(200).send("Auth project is running");
+  res.status(200).send("Server is running");
 });
 
 app.use("/api/auth", userRouter);
