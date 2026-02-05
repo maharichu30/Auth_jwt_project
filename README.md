@@ -1,8 +1,15 @@
 # User Authentication & Authorization API (JWT)
 
-This project implements **User Authentication and Authorization** using
-**JWT Bearer Tokens** with Node.js, Express.js, and MongoDB.
+This project implements **User Authentication and Authorization**
+using **JWT Bearer Tokens** with Node.js, Express.js, and MongoDB.
 The application follows the **MVC architecture** and is tested using Postman.
+The backend is **deployed on Render** and publicly accessible.
+
+---
+
+## 🌐 Live Backend URL
+
+https://auth-jwt-project-m0lk.onrender.com
 
 ---
 
@@ -32,44 +39,62 @@ The application follows the **MVC architecture** and is tested using Postman.
 
 ## 📂 Folder Structure
 
-├── Controllers
-│ └── userController.js
-├── Models
-│ └── userSchema.js
-├── Routers
-│ └── userRouter.js
-├── Middlewares
-│ └── authMiddleware.js
-├── Database
-│ └── dbconfig.js
-├── index.js
-├── .env
-├── package.json
-└── README.md
+├── Controllers  
+│   └── userController.js  
+├── Models  
+│   └── userSchema.js  
+├── Routers  
+│   └── userRouter.js  
+├── Middlewares  
+│   └── authMiddleware.js  
+├── Database  
+│   └── dbconfig.js  
+├── index.js  
+├── .env  
+├── package.json  
+└── README.md  
 
 ---
-## 📋 Setup Instruction
-    
+
+## 📌 API Endpoints (Deployed)
+
+Base URL:
+https://auth-jwt-project-m0lk.onrender.com
+
+
+| Method | Endpoint              | Description              |
+|------|----------------------|--------------------------|
+| POST | /api/auth/register   | Register new user        |
+| POST | /api/auth/login      | Login user & get JWT     |
+| GET  | /api/auth/profile    | Protected user profile   |
+
+---
+
+## 📋 Setup Instructions (Local)
+
 1. Clone the repository:
    ```bash
    git clone <repository-url>
    cd <repository-folder>
-   ```
+
+
 2. Install dependencies:
-   ```bash
+    ```bash
     npm install
     ```
+
+3. Create a `.env` file in the root directory and add the following:
+    ```
+    PORT=5000
+    MONGO_URI=your_mongodb_connection_string
+    JWT_SECRET=your_jwt_secret_key
+    ``` 
+
 4. Start the server:
+    ```bash 
+    npm start
+    ```
+5. Test the API endpoints using Postman or any API client.
 
-    ```bash
-     npm start
-     ```
-5. Test the API using Postman.
-    - Import the provided Postman collection.
-    - Test the signup, signin, and protected routes.
----
-## 📬 Postman Collection
-You can import the Postman collection from the following link:
+Live Postman documentation for the deployed API:
 https://documenter.getpostman.com/view/50347780/2sBXVfiAvg
----
-
